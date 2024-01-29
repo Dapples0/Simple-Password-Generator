@@ -1,12 +1,13 @@
-export function passwordGen(length, specialChar, upperCase, numbers) {
-    if (length > 128 || length < 8) {
-        return { error: 'A generated password must be less than 100 characters'};
+function passwordGen(length, specialChar, upperCase, numbers) {
+    if (length > 64 || length < 8) {
+       console.log('A generated password must be less than 100 characters');
+       return { error: 'A generated password must be less than 100 characters'};
     }
     
     let list = 'abcdefghijklmnopqrstuvwxyz';
 
     if (specialChar) {
-        list += '~`!@#$%^&*(),./><?+_-';
+        list += '~`!@#$%^*(),./=?+_-';
     }
     
     if (upperCase) {
@@ -14,7 +15,7 @@ export function passwordGen(length, specialChar, upperCase, numbers) {
     }
 
     if (numbers) {
-        list += '0123456789'
+        list += '0123456789';
     }
 
     let password = '';
@@ -22,5 +23,9 @@ export function passwordGen(length, specialChar, upperCase, numbers) {
         const character = Math.floor(Math.random() * list.length);
         password += list[character];
     }
+
     return password;
 }
+
+
+
