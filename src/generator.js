@@ -1,7 +1,7 @@
 function passwordGen(length, specialChar, upperCase, numbers) {
     if (length > 64 || length < 8) {
-       console.log('A generated password must be less than 100 characters');
-       return { error: 'A generated password must be less than 100 characters'};
+       console.log('A generated password must be between 8 and 64 characters');
+       return { error: 'A generated password must be between 8 and 64 characters'};
     }
     
     let list = 'abcdefghijklmnopqrstuvwxyz';
