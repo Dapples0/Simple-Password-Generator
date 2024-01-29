@@ -15,7 +15,7 @@ function passwordGen(length, specialChar, upperCase, numbers) {
     }
 
     if (numbers) {
-        list += '0123456789'
+        list += '0123456789';
     }
 
     let password = '';
