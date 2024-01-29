@@ -1,5 +1,4 @@
-
-function passwordGen(length, specialChar, upperCase, numbers) {
+export function passwordGen(length, specialChar, upperCase, numbers) {
     if (length > 128 || length < 8) {
         return { error: 'A generated password must be less than 100 characters'};
     }
